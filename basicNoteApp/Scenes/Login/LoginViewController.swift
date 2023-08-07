@@ -9,7 +9,7 @@ import UIKit
 import TinyConstraints
 
 class LoginViewController: UIViewController {
-
+    let loginViewModelObject = LoginViewModel()
     lazy var loginLabel : UILabel = {
        let label = UILabel()
         label.font = UIFont(name: "Inter-SemiBold", size: 26)
@@ -136,19 +136,9 @@ class LoginViewController: UIViewController {
         print("succesfully forgotpassword view presented.")
     }
     @objc func toNotes() {
-        let notesViewController = NotesViewController()
-        notesViewController.modalPresentationStyle = .fullScreen
-        guard let email = self.emailTextfield.text else {return}
-        guard let password = self.passwordTextfield.text else {return}
-        let loginModel = LoginModel(email: email, password: password)
-        APIManager.shareInstance.callLoginAPI(userLogin: loginModel) { (isSucces) in
-            if isSucces {
-                self.navigationController?.pushViewController(notesViewController, animated: true)
-                print("Succesfully pass into the NotesVC")
-            }
-            else {
-                print("Error acq")
-            }
-        }
+        guard let email = emailTextfield.text,
+              let password = passwordTextfield.text else { return }
+        loginViewModelObject.loginRequest(email: email, password: password)
+    
     }
 }

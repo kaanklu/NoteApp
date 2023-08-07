@@ -19,3 +19,27 @@ protocol RequestProtocol {
     var parameters: RequestParameters { get }
     var encoding: RequestEncoding { get }
 }
+
+extension RequestProtocol {
+    var url: String {
+        return "https://basicnoteapp.mobillium.com/api/" + path
+    }
+    
+    var parameters: RequestParameters {
+        return [:]
+    }
+    
+    var headers: RequestHeaders {
+        return [:]
+    }
+    
+    var encoding: RequestEncoding {
+        switch method {
+        case .get:
+            return .url
+        default:
+            return .json
+        }
+    }
+}
+

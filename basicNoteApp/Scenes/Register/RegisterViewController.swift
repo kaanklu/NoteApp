@@ -9,6 +9,7 @@ import UIKit
 import TinyConstraints
 import KeychainSwift
 class RegisterViewController: UIViewController,UITextFieldDelegate {
+    let registerViewModalObject = RegisterViewModel()
 
     private lazy var signupLabel : UILabel = {
         let label = UILabel()
@@ -27,7 +28,8 @@ class RegisterViewController: UIViewController,UITextFieldDelegate {
     private lazy var signupButton: CustomButton = {
         let btn = CustomButton()
         btn.buttonTitle = "Sign Up"
-        btn.isEnabled = false
+        btn.isEnabled = true
+        btn.addTarget(self, action: #selector(registerButtonClicked), for: .touchUpInside)
         return btn
     }()
     private lazy var nameTextfield : CustomTextfield = {
@@ -46,6 +48,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate {
         let textfield = CustomTextfield()
         textfield.font = UIFont(name: "Inter-Medium", size: 14)
         textfield.placeholder = "Password"
+        textfield.text = "fdsfdasfdsaf"
         textfield.delegate = self
         return textfield
     }()
@@ -65,7 +68,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        print(passwordTextfield.text!)
         addSubviews()
         configureConstraints()
     }
@@ -74,7 +77,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate {
         let loginVC = LoginViewController()
         loginVC.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(loginVC, animated: true)
-        print("sucCeS")
+        print("succesfully pass into the loginviewcontroller.")
     }
     
     func alreadyhaveacc() {
@@ -137,27 +140,11 @@ class RegisterViewController: UIViewController,UITextFieldDelegate {
     }
     
     @objc func registerButtonClicked() {
-        
-        guard let name = self.nameTextfield.text else {return}
-        guard let email = self.emailTextfield.text else {return}
-        guard let password = self.passwordTextfield.text else {return}
-        let register = RegisterModel(full_name: name, email: email, password: password)
-        APIManager.shareInstance.callRegisterAPI(userRegister: register) { (isSucces) in
-            DispatchQueue.main.async {
-                if isSucces {
-                        self.toastMessege(messege: "olduddd")
-                    }
-                    else {
-                        self.toastMessege(messege: "olmadii")
-                    }
-            }
-            }
+          guard let email = emailTextfield.text,
+                let name = nameTextfield.text,
+                let password = passwordTextfield.text else {
+              return
+          }
+        registerViewModalObject.registerRequest(name: name, email: email, password: password)
         }
-    
-    func toastMessege(messege:String) {
-        let makeAlert = UIAlertController(title: "Uyarı", message: messege, preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "ok", style: .cancel)
-        makeAlert.addAction(okButton)
-        present(makeAlert, animated: true)
-    }
 }

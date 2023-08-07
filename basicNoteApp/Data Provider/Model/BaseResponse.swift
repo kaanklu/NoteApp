@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct BaseResponse<T: Decodable>: Decodable {
+    let data: T?
+    let message: String?
+    let code: String?
+}

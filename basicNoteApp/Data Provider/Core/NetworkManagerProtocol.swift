@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol NetworkManagerProtocol {
+    func requestWithAlamofire<T: RequestProtocol>(for request: T, result: ((Result<T.ResponseType, Error>) -> Void)?)
+    
+}
