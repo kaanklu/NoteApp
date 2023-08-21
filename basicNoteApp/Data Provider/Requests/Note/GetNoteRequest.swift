@@ -11,7 +11,7 @@ struct GetNoteRequest: RequestProtocol {
     
     public typealias ResponseType = BaseResponse<Note>
 
-    var path: String = "notes"
+    var path: String = ""
     var method: RequestMethod = .get
     var parameters: RequestParameters = [:]
     var headers: RequestHeaders = [:]

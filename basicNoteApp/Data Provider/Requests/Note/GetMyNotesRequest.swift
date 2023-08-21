@@ -19,5 +19,6 @@ struct GetMyNotesRequest: RequestProtocol {
     init(accessToken: String, pageNumber: String) {
         headers["Authorization"] = "Bearer \(accessToken)"
         parameters["page"] = "\(pageNumber)"
+        
     }
 }

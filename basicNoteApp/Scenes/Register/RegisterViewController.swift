@@ -75,14 +75,12 @@ class RegisterViewController: UIViewController,UITextFieldDelegate {
     
     @objc func toLoginVC() {
         let loginVC = LoginViewController()
-        loginVC.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(loginVC, animated: true)
         print("succesfully pass into the loginviewcontroller.")
     }
     
     func alreadyhaveacc() {
         let destinationVC = LoginViewController()
-        destinationVC.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(destinationVC, animated: true)
     }
     
@@ -146,5 +144,6 @@ class RegisterViewController: UIViewController,UITextFieldDelegate {
               return
           }
         registerViewModalObject.registerRequest(name: name, email: email, password: password)
+        
         }
 }

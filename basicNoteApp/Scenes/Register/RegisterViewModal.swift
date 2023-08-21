@@ -7,8 +7,8 @@
 
 import Foundation
 import KeychainSwift
+let keyChain = KeychainSwift()
 class RegisterViewModel {
-    let keyChain = KeychainSwift()
     let networkManager = NetworkManager()
     func registerRequest(name:String, email:String, password:String) {
        let registerRequest = RegisterRequest(fullName: name, email: email, password: password)
@@ -17,7 +17,7 @@ class RegisterViewModel {
             switch(result) {
             case.success(let response):
                 keyChain.set((response.data?.accessToken)!, forKey: "access_key")
-                print(response)
+                print(response.message as Any)
                 print("keychain added -> \(keyChain.allKeys)")
             case.failure(let error):
                 print(error.localizedDescription)

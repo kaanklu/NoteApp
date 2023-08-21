@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 struct RegisterRequest: RequestProtocol {
     
     typealias ResponseType = BaseResponse<Auth>

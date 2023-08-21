@@ -8,9 +8,9 @@
 import Foundation
 
 struct Notes: Decodable {
-    let currentPage: Int?
-    let perPage: Int?
-    let data: [Note]
+    var currentPage: Int?
+    var perPage: Int?
+    var data: [Note]
     
     enum CodingKeys: String, CodingKey {
         case currentPage = "current_page"
@@ -20,7 +20,7 @@ struct Notes: Decodable {
 }
 
 struct Note: Decodable {
-    let id: Int?
-    let title: String?
-    let note: String?
+    var id: Int?
+    var title: String?
+    var note: String?
 }

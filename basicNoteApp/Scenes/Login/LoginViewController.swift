@@ -7,6 +7,7 @@
 
 import UIKit
 import TinyConstraints
+import KeychainSwift
 
 class LoginViewController: UIViewController {
     let loginViewModelObject = LoginViewModel()
@@ -139,6 +140,10 @@ class LoginViewController: UIViewController {
         guard let email = emailTextfield.text,
               let password = passwordTextfield.text else { return }
         loginViewModelObject.loginRequest(email: email, password: password)
-    
+        loginViewModelObject.onLoginSuccess = { [weak self] in
+            self?.navigationController?.pushViewController(NotesViewController(), animated: true)
+        }
+        
+        
     }
 }
