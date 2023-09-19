@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-basicNoteApp/Pods-basicNoteApp-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
 ${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework
 ${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework

@@ -5,6 +5,7 @@
 //  Created by Kaan Kalaycıoğlu on 30.07.2023.
 //
 import UIKit
+import TinyConstraints
 
 class CustomTextfield : UITextField {
 
@@ -30,6 +31,7 @@ extension CustomTextfield :UITextFieldDelegate{
         self.layer.borderWidth = 1
         self.borderStyle = .roundedRect
         self.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+        
         
     }
     

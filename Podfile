@@ -9,4 +9,5 @@ target 'basicNoteApp' do
   pod "TinyConstraints"
   pod 'Alamofire'
   pod 'SwipeCellKit'
+  pod 'IQKeyboardManager'
 end

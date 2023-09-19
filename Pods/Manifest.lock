@@ -1,24 +1,28 @@
 PODS:
   - Alamofire (5.7.1)
+  - IQKeyboardManager (6.5.12)
   - SwipeCellKit (2.7.1)
   - TinyConstraints (4.0.2)
 
 DEPENDENCIES:
   - Alamofire
+  - IQKeyboardManager
   - SwipeCellKit
   - TinyConstraints
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - IQKeyboardManager
     - SwipeCellKit
     - TinyConstraints
 
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  IQKeyboardManager: b1fd66ccf7a79095bdcc4a2735231586f744216e
   SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
   TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
 
-PODFILE CHECKSUM: 602aa689bc05a5dd2331409ac1c32a4cd7cf9fd7
+PODFILE CHECKSUM: e5c8c731305af243e0c5cc35f378bf2011e86f77
 
 COCOAPODS: 1.12.1

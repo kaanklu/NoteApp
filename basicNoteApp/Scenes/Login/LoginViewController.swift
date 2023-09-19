@@ -11,11 +11,23 @@ import KeychainSwift
 
 class LoginViewController: UIViewController {
     let loginViewModelObject = LoginViewModel()
+    var router: LoginRouter
+    
+    init(router: LoginRouter) {
+        self.router = router
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     lazy var loginLabel : UILabel = {
        let label = UILabel()
         label.font = UIFont(name: "Inter-SemiBold", size: 26)
         label.text = "Login"
         label.textAlignment = .center
+        label.textColor = UIColor(named: "textPrimary")
         return label
     }()
     
@@ -39,6 +51,7 @@ class LoginViewController: UIViewController {
        let textfield = CustomTextfield()
         textfield.font = UIFont(name: "Inter-Medium", size: 14)
         textfield.placeholder = "Password"
+        textfield.isSecureTextEntry = true
         return textfield
     }()
     
@@ -46,6 +59,7 @@ class LoginViewController: UIViewController {
         let button = UIButton()
         button.titleLabel?.font = UIFont(name: "Inter-Medium", size: 14)
         button.setTitle("Forgot Password?", for: .normal)
+        button.setTitleColor(UIColor(named: "textPrimary"), for: .normal)
         button.addTarget(self, action: #selector(toForgotPasswordVC), for: .touchUpInside)
         return button
     }()
@@ -61,9 +75,9 @@ class LoginViewController: UIViewController {
         let button = UIButton()
         let attributedString = NSMutableAttributedString(string: "New user? Sign up now")
         let ClickableString = NSRange(location: 10, length: 11)
-        attributedString.addAttribute(.link, value: "", range: ClickableString)
+        attributedString.addAttribute(.foregroundColor, value: UIColor(named: "deepPurple")!, range: ClickableString)
         button.setAttributedTitle(attributedString, for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(UIColor(named: "textColor"), for: .normal)
         button.titleLabel?.font = UIFont(name: "Inter-Medium", size: 15)
         button.isUserInteractionEnabled = true
         button.addTarget(self, action: #selector(toRegisterVC), for: .touchUpInside)
@@ -74,10 +88,11 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailTextfield.text = "Onur1@mail.com"
-        passwordTextfield.text = "123456"
+        emailTextfield.text = "Ggwp1@gmail.com"
+        passwordTextfield.text = "1234567"
         addSubviews()
         configure()
+        textfieldDelegates()
 
       
     }
@@ -94,24 +109,31 @@ class LoginViewController: UIViewController {
         
     }
     
+    
+    func textfieldDelegates() {
+        
+        emailTextfield.delegate = self
+        passwordTextfield.delegate = self
+    }
+    
     func configure() {
         
         loginLabel.size(CGSize(width: 327, height: 31))
         loginLabel.topToSuperview(offset: 96, usingSafeArea: true)
-        loginLabel.leading(to: view, offset: 24)
-       
+        loginLabel.centerX(to: view)
         //
-        loginLabelSubtext.leading(to: loginLabel)
+        
         loginLabelSubtext.size(CGSize(width: 327, height: 18))
         loginLabelSubtext.topToBottom(of: loginLabel, offset: 16)
-        loginLabelSubtext.leading(to: view, offset: 24)
+        loginLabelSubtext.centerX(to: view)
+        
         //
         emailTextfield.size(CGSize(width: 327, height: 53))
-        emailTextfield.leading(to: loginLabelSubtext)
+        emailTextfield.centerX(to: view)
         emailTextfield.topToBottom(of: loginLabelSubtext, offset: 40)
        //
         passwordTextfield.size(CGSize(width: 327, height: 53))
-        passwordTextfield.leading(to: emailTextfield)
+        passwordTextfield.centerX(to: view)
         passwordTextfield.topToBottom(of: emailTextfield, offset: 16)
         //
         forgotPasswordButton.size(CGSize(width: 121, height: 17))
@@ -120,30 +142,46 @@ class LoginViewController: UIViewController {
         //
         loginButton.size(CGSize(width: 327, height: 63))
         loginButton.topToBottom(of: passwordTextfield, offset: 50)
-        loginButton.leading(to: passwordTextfield)
+        loginButton.centerX(to: view)
         //
         newUserButton.size(CGSize(width: 271, height: 18))
         newUserButton.bottomToSuperview(offset: 4,usingSafeArea: true)
-        newUserButton.leading(to: view, offset: 52)
+        newUserButton.centerX(to: view)
     }
+    
+    
     @objc func toRegisterVC() {
-        let registerVC = RegisterViewController()
-        self.navigationController?.pushViewController(registerVC, animated: true)
+        router.placeOnRegisterViewController()
     }
+    
     @objc func toForgotPasswordVC() {
-        let forgotPasswordVC = ForgotPasswordViewController()
-        forgotPasswordVC.modalPresentationStyle = .fullScreen
-        self.navigationController?.pushViewController(forgotPasswordVC, animated: true)
-        print("succesfully forgotpassword view presented.")
+        router.pushForgotPasswordViewController()
     }
+    
     @objc func toNotes() {
         guard let email = emailTextfield.text,
               let password = passwordTextfield.text else { return }
         loginViewModelObject.loginRequest(email: email, password: password)
         loginViewModelObject.onLoginSuccess = { [weak self] in
-            self?.navigationController?.pushViewController(NotesViewController(), animated: true)
+            self?.router.placeOnMainVC()
         }
+    }
+   
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    
+     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        
+        if let customTF = textField as? CustomTextfield {
+            let isEmpty = customTF.setBorderColorWhenEmpty()
+            if passwordTextfield.text != "" && emailTextfield.text != "" {
+                self.loginButton.isEnabled = !isEmpty
+            }
+            else {
+                self.loginButton.isEnabled = isEmpty
+                self.loginButton.isEnabled = false
+            }
+        }
     }
 }

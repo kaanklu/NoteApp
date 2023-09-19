@@ -12,8 +12,23 @@ import TinyConstraints
 
 class NotesViewController: UIViewController {
     
+    //router inits
+    var router: NotesRouter
+    init(router: NotesRouter) {
+        self.router = router
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    //--//
+    
     let notesVMObject = NotesViewModel()
+
     var userNoteData:Notes? = nil
+    var filteredData: [Note] = []
+
     let notesTableView:UITableView = UITableView()
     private let profileButton = UIButton(type: .custom)
     
@@ -45,9 +60,11 @@ class NotesViewController: UIViewController {
         notesTableView.reloadData()
     }
     
+    
 
     
     func tableviewArrangements() {
+        
         notesTableView.delegate = self
         notesTableView.dataSource = self
         notesTableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
@@ -60,7 +77,6 @@ class NotesViewController: UIViewController {
     
     
     func setupNavigationBar() {
-        navigationItem.hidesBackButton = true
     
         let profileButton = UIButton()
         profileButton.setImage(UIImage(named: "profile_photo"),for: .normal)
@@ -75,22 +91,41 @@ class NotesViewController: UIViewController {
         let menuBarButtonItem = UIBarButtonItem(customView: menu)
         navigationItem.leftBarButtonItems = [menuBarButtonItem]
         
+//        let searchController = UISearchController(searchResultsController: nil)
+//        searchController.searchBar.searchBarStyle = .prominent
+//        searchController.searchBar.size(CGSize(width: 231, height: 40),isActive: true)
+//        searchController.sea
+//        searchController.searchResultsUpdater = self
+//        navigationItem.searchController = searchController
+        
+        
         let searchBar = UISearchBar()
         self.navigationItem.titleView = searchBar
         searchBar.size(CGSize(width: 231, height: 40),isActive: true)
         searchBar.placeholder = "Search..."
         searchBar.delegate = self
-        
         searchBar.searchBarStyle = .prominent
+        
     }
     
+    func filterContentForSearchText(_ searchText: String) {
+        // searchText'i kullanarak notları filtrele ve sonuçları 'filteredData' dizisine atayın.
+        filteredData = userNoteData?.data.filter { note in
+            return (note.title?.lowercased().contains(searchText.lowercased()))! ||
+            note.note!.lowercased().contains(searchText.lowercased())
+        } ?? []
+        
+        // Tabloyu güncelleyin
+        notesTableView.reloadData()
+    }
+
+    
     @objc func addNote() {
-        self.navigationController?.pushViewController(AddNoteViewController(), animated: true)
+        router.placeOnAddNoteVC()
     }
     
     @objc func profileButtonClicked() {
-        let profileViewController = ProfileViewController()
-        self.navigationController?.pushViewController(profileViewController, animated: true)
+        router.placeOnProfileViewController()
     }
     
     @objc func emptyFunction() {
@@ -102,10 +137,11 @@ class NotesViewController: UIViewController {
     }
     
     func addConstraints() {
+        
         addNoteButton.size(CGSize(width: 142, height: 41))
         addNoteButton.topToSuperview(offset: 713)
-        addNoteButton.leadingToSuperview(offset: 116.5)
-        addNoteButton.trailingToSuperview(offset: 116.5)
+        addNoteButton.centerX(to: view)
+        
     }
     
     func getMyNotes() {
@@ -156,8 +192,8 @@ extension NotesViewController : UITableViewDelegate {
         let editAction = UIContextualAction(style: .normal, title: "Edit") { [weak self] (action, view, completionHandler) in
             
             if let userNote = self!.userNoteData?.data[indexPath.row] {
-                self?.navigationController?.pushViewController(EditNoteViewController(note: userNote), animated: true)
-                self?.notesTableView.reloadData()
+
+                self!.router.pushEditNoteVC(note: userNote)
             }
 
             completionHandler(true)
@@ -196,6 +232,9 @@ extension NotesViewController:UISearchBarDelegate {
 
 extension NotesViewController :UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            filterContentForSearchText(searchText)
+        }
         
     }
     

@@ -10,6 +10,7 @@ import Foundation
 class LoginViewModel {
     var onLoginSuccess: (() -> Void)?
     let networkManager = NetworkManager()
+    
     func loginRequest(email:String, password:String) {
         let loginRequest = LoginRequest(email: email, password: password)
         

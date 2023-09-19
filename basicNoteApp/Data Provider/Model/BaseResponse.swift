@@ -12,3 +12,8 @@ struct BaseResponse<T: Decodable>: Decodable {
     let message: String?
     let code: String?
 }
+
+struct ErrorResponse: Decodable,Error {
+  let code: String
+  let message: String
+}

@@ -9,10 +9,11 @@ import UIKit
 
 class EditNoteViewController: UIViewController {
     
-    let editViewModelObject = EditNoteViewModel()
-    private var note: Note
-    init(note: Note) {
-        self.note = note
+    var note:Note? = nil
+    var router: EditNoteRouter
+    
+    init(router: EditNoteRouter) {
+        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -20,7 +21,7 @@ class EditNoteViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-   
+    let editViewModelObject = EditNoteViewModel()
     
     lazy var noteTitle : UITextField = {
         let textfield = UITextField()
@@ -40,6 +41,7 @@ class EditNoteViewController: UIViewController {
         textview.text = "descč"
         return textview
     }()
+    
     lazy var editButton:CustomButton = {
         let button = CustomButton()
         button.setTitle("Save", for: .normal)
@@ -48,7 +50,7 @@ class EditNoteViewController: UIViewController {
         button.addTarget(self, action: #selector(editButtonClicked), for: .touchUpInside)
         return button
     }()
-    var noteID:Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,17 +59,11 @@ class EditNoteViewController: UIViewController {
         addSubviews()
         addConstraints()
         addNavigationController()
-        configureUI()
-        
+        textfieldControl()
+        print("312312312312312312312")
+        print(note?.note)
     }
-    
-    func configureUI() {
-        
-        noteTitle.text = note.title
-        noteTextview.text = note.note
-        
-    }
-    
+
     
     func addSubviews() {
         view.addSubview(noteTitle)
@@ -87,23 +83,45 @@ class EditNoteViewController: UIViewController {
         noteTextview.trailing(to: noteTitle)
         
         editButton.topToBottom(of: noteTextview,offset: 22)
-        editButton.leadingToSuperview(offset: 116.5)
-        editButton.trailingToSuperview(offset: 116.5)
+        editButton.centerX(to: view)
         
     }
     
     func addNavigationController() {
         self.title = "Edit Note"
         
+        let leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
+        leftBarButtonItem.tintColor = .black
+        navigationItem.leftBarButtonItem = leftBarButtonItem
+    
+    }
+    
+    func textfieldControl() {
+        if let note = note {
+            noteTitle.text = note.title
+            noteTextview.text = note.note
+        }
+        else {
+            noteTitle.text = ""
+            noteTextview.text = ""
+        }
+    }
+    
+    @objc func backButtonTapped() {
+        router.placeOnMainVC()
+    
     }
     
     @objc func editButtonClicked() {
-        var editedNote = note
-        editedNote.title = noteTitle.text
-        editedNote.note = noteTextview.text
-        editedNote.id = note.id
-        editViewModelObject.editNote(noteId: String(editedNote.id!), title: editedNote.title!, note: editedNote.note!)
-        
+        if noteTitle.text != "" && noteTextview.text != "" {
+            if let editedTitle = note?.title,
+               let editedNote = note?.note,
+               let editedId = note?.id {
+                editViewModelObject.editNote(noteId: String(editedId), title: editedTitle, note: editedNote)
+                router.placeOnMainVC()
+                
+            }
+        }
     }
 }
 

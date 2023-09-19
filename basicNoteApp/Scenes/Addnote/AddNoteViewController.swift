@@ -8,7 +8,23 @@
 import UIKit
 import TinyConstraints
 
+
+
 class AddNoteViewController: UIViewController {
+    
+    //router inits
+    var router: AddNoteRouter
+    init(router: AddNoteRouter) {
+        self.router = router
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    //--//
+    
+    
     lazy var noteTitle : UITextField = {
         let textfield = UITextField()
         textfield.size(CGSize(width: 327, height: 27))
@@ -80,6 +96,8 @@ class AddNoteViewController: UIViewController {
     @objc func saveButtonClicked() {
         if noteTitle.text != "" && noteTextview.text != "" {
             addNoteViewModelObject.editNote(title: noteTitle.text!, note: noteTextview.text!)
+            router.placeOnMainVC()
+            
         }
         else { return }
     }

@@ -51,6 +51,7 @@ extension CustomButton {
         self.layer.cornerRadius = 5
         self.backgroundColor = UIColor(named: "myPurple")
         self.titleLabel?.font = UIFont(name: "Inter-SemiBold", size: 16)
+        self.setTitleColor(UIColor(named: "deepPurple"), for: .normal)
     }
     
     private func configureButtonTitle() {

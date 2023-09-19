@@ -8,71 +8,119 @@
 import UIKit
 
 class ForgotPasswordViewController: UIViewController {
-    let forgotPasswordLabel:UILabel = UILabel()
-    let forgotPasswordSubtitleLabel:UILabel = UILabel()
-    let emailTextfield:UITextField = UITextField()
-    let resetPassword:UIButton = UIButton()
+    
+    var router: ForgotPasswordRouter
+    
+    init(router: ForgotPasswordRouter) {
+        self.router = router
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    
+    let changePasswordViewModelObject = ChangePasswordViewModel()
+    let forgotPasswordLabel:UILabel = {
+        let label = UILabel()
+        label.size(CGSize(width: 327, height: 31))
+         label.font = UIFont(name: "Inter-SemiBold", size: 26)
+         label.text = "Forgot Password?"
+         label.textAlignment = .center
+         return label
+        
+    }()
+    let forgotPasswordSubtext:UILabel = {
+        let label = UILabel()
+        label.size(CGSize(width: 327, height: 36))
+        label.font = UIFont(name: "Inter-Medium", size: 15)
+        label.text = "Confirm your email and we’ll send the instructions."
+        label.textAlignment = .center
+        label.numberOfLines = 2
+         return label
+    }()
+    
+    lazy var emailTextfield : CustomTextfield = {
+       let textfield = CustomTextfield()
+        textfield.font = UIFont(name: "Inter-Medium", size: 14)
+        textfield.placeholder = "Email Address"
+        textfield.size(CGSize(width: 327, height: 53))
+        textfield.delegate = self
+        
+        return textfield
+    }()
+    
+    lazy var resetPasswordButton:CustomButton = {
+       let button = CustomButton()
+        button.buttonTitle = "Reset Password"
+        button.size(CGSize(width: 327, height: 63))
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
         configure()
+        configureNavigationBar()
 
     }
+    
     func addSubviews() {
+        
         view.backgroundColor = .white
         view.addSubview(forgotPasswordLabel)
-        view.addSubview(forgotPasswordSubtitleLabel)
+        view.addSubview(forgotPasswordSubtext)
         view.addSubview(emailTextfield)
-        view.addSubview(resetPassword)
-        
-        
+        view.addSubview(resetPasswordButton)
         
     }
     
     func configure() {
         
-        forgotPasswordLabel.size(CGSize(width: 327, height: 31))
-        forgotPasswordLabel.topToSuperview(offset: 96, usingSafeArea: true)
-        forgotPasswordLabel.leading(to: view, offset: 24)
-        forgotPasswordLabel.font = UIFont(name: "Inter-SemiBold", size: 26)
-        forgotPasswordLabel.text = "Forgot Password?"
-        forgotPasswordLabel.textAlignment = .center
-        //
-        forgotPasswordSubtitleLabel.leading(to: forgotPasswordLabel)
-        forgotPasswordSubtitleLabel.size(CGSize(width: 327, height: 18))
-        forgotPasswordSubtitleLabel.topToBottom(of: forgotPasswordLabel, offset: 16)
-        forgotPasswordSubtitleLabel.leading(to: view, offset: 24)
-        forgotPasswordSubtitleLabel.textAlignment = .center
-        forgotPasswordSubtitleLabel.font = UIFont(name: "Inter-Medium", size: 13)
-        forgotPasswordSubtitleLabel.textColor = UIColor(named: "textColor")
+        forgotPasswordLabel.topToSuperview(offset: 8,usingSafeArea: true)
+        forgotPasswordLabel.leadingToSuperview(offset: 24)
+        forgotPasswordLabel.trailingToSuperview(offset: 24)
+        
+        forgotPasswordSubtext.topToBottom(of: forgotPasswordLabel,offset: 16)
+        forgotPasswordSubtext.leading(to: forgotPasswordLabel)
+        forgotPasswordSubtext.trailing(to: forgotPasswordLabel)
+        
+        emailTextfield.topToBottom(of: forgotPasswordSubtext,offset: 40)
+        emailTextfield.trailing(to: forgotPasswordLabel)
+        emailTextfield.leading(to: forgotPasswordLabel)
+        
+        resetPasswordButton.topToBottom(of: emailTextfield,offset: 24)
+        resetPasswordButton.trailing(to: emailTextfield)
+        resetPasswordButton.leading(to: emailTextfield)
 
-        forgotPasswordSubtitleLabel.text = "Confirm your email and we'll send the instructions."
-        forgotPasswordLabel.numberOfLines = 2
-        //
-        emailTextfield.size(CGSize(width: 327, height: 53))
-        emailTextfield.leading(to: forgotPasswordSubtitleLabel)
-        emailTextfield.topToBottom(of: forgotPasswordSubtitleLabel, offset: 40)
-        emailTextfield.font = UIFont(name: "Inter-Medium", size: 14)
-        emailTextfield.placeholder = "Email Address"
-        emailTextfield.borderStyle = .roundedRect
-        emailTextfield.layer.borderWidth = 1
-        emailTextfield.layer.cornerRadius = 5
-        emailTextfield.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-        //
-        resetPassword.size(CGSize(width: 327, height: 63))
-        resetPassword.topToBottom(of: emailTextfield, offset: 50)
-        resetPassword.leading(to: emailTextfield)
-        resetPassword.titleLabel?.font = UIFont(name: "Inter-SemiBold", size: 16)
-        resetPassword.setTitle("Login", for: .normal)
-        resetPassword.setTitleColor(UIColor(named: "deepPurple"), for: .normal)
-        resetPassword.backgroundColor = UIColor(named: "myPurple")
-        resetPassword.layer.cornerRadius = 5.0
+    }
+    
+    func configureNavigationBar() {
         
-        
+        let leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
+        leftBarButtonItem.tintColor = .black
+        navigationItem.leftBarButtonItem = leftBarButtonItem
         
     }
     
-    
- 
+    @objc func backButtonTapped() {
+        router.placeOnLoginViewController()
+    }
 
 }
+extension ForgotPasswordViewController: UITextFieldDelegate {
+    
+     func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        if let customTF = textField as? CustomTextfield {
+            let isEmpty = customTF.setBorderColorWhenEmpty()
+            if emailTextfield.text != "" {
+                self.resetPasswordButton.isEnabled = !isEmpty
+            }
+            else {
+                self.resetPasswordButton.isEnabled = false
+            }
+        }
+    }
+}
+
