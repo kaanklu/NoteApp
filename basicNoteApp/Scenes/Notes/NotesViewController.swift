@@ -24,13 +24,14 @@ class NotesViewController: UIViewController {
     }
     //--//
     
+    
     let notesVMObject = NotesViewModel()
-
     var userNoteData:Notes? = nil
     var filteredData: [Note] = []
 
     let notesTableView:UITableView = UITableView()
     private let profileButton = UIButton(type: .custom)
+    
     
     lazy var addNoteButton: CustomButton = {
         let button = CustomButton()

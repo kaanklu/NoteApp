@@ -6,18 +6,27 @@
 //
 
 import Foundation
+import ToastViewSwift
 
 class ChangePasswordViewModel {
     let networkManager = NetworkManager()
-    func changePasswordRequest(password: String, newpassword: String, retypepassword: String, accessToken: String) {
+    
+    func changePasswordRequest(password: String, newPassword: String, retypePassword: String, accessToken: String) {
        let changePasswordRequest = ChangePasswordRequest(password: password, newpassword: newpassword, retypepassword: retypepassword, accessToken: accessToken)
         networkManager.requestWithAlamofire(for: changePasswordRequest){ [weak self] result in
             guard let self = self else { return }
             switch(result) {
+                
             case.success(let response):
                 print(response)
+                let toast = Toast.text("Succesfully changed your password")
+                toast.show()
+                
             case.failure(let error):
                 print(error.localizedDescription)
+                let toast = Toast.text("Passwords do not match.")
+                toast.show()
+                
             }
         }
     }

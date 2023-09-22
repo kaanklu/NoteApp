@@ -100,7 +100,7 @@ class ChangePasswordViewController: UIViewController {
               let pw3 = retypeNewPasswordTextfield.text
         else {return}
         print("tapped")
-        changePasswordViewModelObject.changePasswordRequest(password: pw1, newpassword: pw2, retypepassword: pw3, accessToken: keyChain.get("access_token")!)
+        changePasswordViewModelObject.changePasswordRequest(password: pw1, newPassword: pw2, retypePassword: pw3, accessToken: keyChain.get("access_token")!)
         router.placeOnMainVC()
     }
     

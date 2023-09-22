@@ -17,7 +17,7 @@ extension NotesRoute where Self: RouterProtocol {
         let mainViewController = NotesViewController(router: router)
         let navigationController = UINavigationController(rootViewController: mainViewController)
         let transition = PlaceOnWindowTransition()
-        
+        mainViewController.notesTableView.reloadData()
         router.presentingViewController = mainViewController
         
         open(navigationController, transition: transition)

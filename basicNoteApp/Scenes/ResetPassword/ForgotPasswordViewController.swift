@@ -30,6 +30,9 @@ class ForgotPasswordViewController: UIViewController {
          return label
         
     }()
+    
+   
+    
     let forgotPasswordSubtext:UILabel = {
         let label = UILabel()
         label.size(CGSize(width: 327, height: 36))

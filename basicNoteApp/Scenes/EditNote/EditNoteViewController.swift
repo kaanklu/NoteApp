@@ -60,8 +60,7 @@ class EditNoteViewController: UIViewController {
         addConstraints()
         addNavigationController()
         textfieldControl()
-        print("312312312312312312312")
-        print(note?.note)
+        
     }
 
     
@@ -114,8 +113,8 @@ class EditNoteViewController: UIViewController {
     
     @objc func editButtonClicked() {
         if noteTitle.text != "" && noteTextview.text != "" {
-            if let editedTitle = note?.title,
-               let editedNote = note?.note,
+            if let editedTitle = noteTitle.text,
+               let editedNote = noteTextview.text,
                let editedId = note?.id {
                 editViewModelObject.editNote(noteId: String(editedId), title: editedTitle, note: editedNote)
                 router.placeOnMainVC()

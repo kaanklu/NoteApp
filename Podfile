@@ -10,4 +10,7 @@ target 'basicNoteApp' do
   pod 'Alamofire'
   pod 'SwipeCellKit'
   pod 'IQKeyboardManager'
+  pod 'SwiftEntryKit'
+  pod "ToastViewSwift"
+  
 end
