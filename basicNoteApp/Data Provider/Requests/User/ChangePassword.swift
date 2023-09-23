@@ -16,11 +16,11 @@ struct ChangePasswordRequest: RequestProtocol {
     var parameters: RequestParameters = [:]
     var headers: RequestHeaders = [:]
 
-    init(password: String, newpassword: String, retypepassword : String, accessToken: String) {
+    init(password: String, newPassword: String, retypePassword : String, accessToken: String) {
         headers["Authorization"] = "Bearer \(accessToken)"
-        parameters["new_password"] = newpassword
+        parameters["new_password"] = newPassword
         parameters["password"] = password
-        parameters["new_password_confirmation"] = retypepassword
+        parameters["new_password_confirmation"] = retypePassword
 
     }
 }

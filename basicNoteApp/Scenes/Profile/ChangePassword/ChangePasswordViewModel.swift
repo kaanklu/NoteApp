@@ -12,7 +12,8 @@ class ChangePasswordViewModel {
     let networkManager = NetworkManager()
     
     func changePasswordRequest(password: String, newPassword: String, retypePassword: String, accessToken: String) {
-       let changePasswordRequest = ChangePasswordRequest(password: password, newpassword: newpassword, retypepassword: retypepassword, accessToken: accessToken)
+        let changePasswordRequest = ChangePasswordRequest(password: password, newPassword: newPassword, retypePassword: retypePassword, accessToken: accessToken)
+        
         networkManager.requestWithAlamofire(for: changePasswordRequest){ [weak self] result in
             guard let self = self else { return }
             switch(result) {
