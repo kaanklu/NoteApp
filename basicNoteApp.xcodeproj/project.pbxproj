@@ -7,24 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C2A6CDF2A6DD96000E5DBAB /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2A6CDE2A6DD96000E5DBAB /* NoteCell.swift */; };
+		8C21B1DB2AA4B17900434533 /* ProfileRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21B1DA2AA4B17900434533 /* ProfileRoute.swift */; };
+		8C21B1DD2AA4B18100434533 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21B1DC2AA4B18100434533 /* ProfileRouter.swift */; };
+		8C21B1DF2AA4B30E00434533 /* ChangePasswordRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21B1DE2AA4B30E00434533 /* ChangePasswordRoute.swift */; };
+		8C21B1E12AA4B32000434533 /* ChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21B1E02AA4B32000434533 /* ChangePasswordRouter.swift */; };
+		8C27211A2AA25A1800D34B7B /* RegisterRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2721192AA25A1800D34B7B /* RegisterRoute.swift */; };
+		8C27211C2AA25A2300D34B7B /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C27211B2AA25A2300D34B7B /* RegisterRouter.swift */; };
+		8C27211E2AA25A5200D34B7B /* ForgotPasswordRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C27211D2AA25A5200D34B7B /* ForgotPasswordRoute.swift */; };
+		8C2721202AA25A5A00D34B7B /* ForgotPasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C27211F2AA25A5A00D34B7B /* ForgotPasswordRouter.swift */; };
+		8C2721222AA25A8500D34B7B /* NotesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2721212AA25A8500D34B7B /* NotesRoute.swift */; };
+		8C2721252AA25A9900D34B7B /* NotesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2721242AA25A9900D34B7B /* NotesRouter.swift */; };
+		8C372F6F2A93919E00A03B1A /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C372F6E2A93919E00A03B1A /* ChangePasswordViewController.swift */; };
 		8C4BDE7B2A6973DF009B8B63 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4BDE7A2A6973DF009B8B63 /* NotesViewController.swift */; };
 		8C4BDE7E2A6D39E1009B8B63 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8C4BDE7D2A6D39E1009B8B63 /* KeychainSwift */; };
 		8C4BDE802A6DAB45009B8B63 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4BDE7F2A6DAB45009B8B63 /* NotesViewModel.swift */; };
+		8C5A1FB02A8AC87E00BC45E9 /* DeleteNoteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5A1FAF2A8AC87E00BC45E9 /* DeleteNoteRequest.swift */; };
+		8C5A1FB22A8AD9E000BC45E9 /* EditNoteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5A1FB12A8AD9E000BC45E9 /* EditNoteRequest.swift */; };
+		8C5A996D2A9F87CD0004A812 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5A996C2A9F87CD0004A812 /* AppRouter.swift */; };
+		8C5A996F2A9F87E60004A812 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5A996E2A9F87E60004A812 /* Router.swift */; };
+		8C5A99712A9F87FD0004A812 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5A99702A9F87FD0004A812 /* Animator.swift */; };
+		8C5A99742A9F882A0004A812 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5A99732A9F882A0004A812 /* Transition.swift */; };
+		8C5A99762A9F88480004A812 /* PlaceOnWindowTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5A99752A9F88480004A812 /* PlaceOnWindowTransition.swift */; };
+		8C5A99782A9F88620004A812 /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5A99772A9F88620004A812 /* PushTransition.swift */; };
+		8C5A997A2A9F88830004A812 /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5A99792A9F88830004A812 /* ModalTransition.swift */; };
+		8C5A997C2A9F89F30004A812 /* LoginRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5A997B2A9F89F30004A812 /* LoginRoute.swift */; };
+		8C5A997E2A9F89FD0004A812 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5A997D2A9F89FD0004A812 /* LoginRouter.swift */; };
 		8C5FD19D2A5F50FA005483C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5FD19C2A5F50FA005483C2 /* AppDelegate.swift */; };
 		8C5FD19F2A5F50FA005483C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5FD19E2A5F50FA005483C2 /* SceneDelegate.swift */; };
-		8C5FD1A12A5F50FA005483C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5FD1A02A5F50FA005483C2 /* ViewController.swift */; };
 		8C5FD1A42A5F50FA005483C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C5FD1A22A5F50FA005483C2 /* Main.storyboard */; };
 		8C5FD1A62A5F50FB005483C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C5FD1A52A5F50FB005483C2 /* Assets.xcassets */; };
 		8C5FD1A92A5F50FB005483C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C5FD1A72A5F50FB005483C2 /* LaunchScreen.storyboard */; };
+		8C5FE46C2A8CCBCB00332D65 /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5FE46B2A8CCBCB00332D65 /* EditNoteViewController.swift */; };
+		8C5FE4742A8D87B900332D65 /* EditNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5FE4732A8D87B900332D65 /* EditNoteViewModel.swift */; };
+		8C5FE4762A922CEA00332D65 /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5FE4752A922CEA00332D65 /* AddNoteViewModel.swift */; };
+		8C5FE4782A922D4800332D65 /* AddNoteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5FE4772A922D4800332D65 /* AddNoteRequest.swift */; };
 		8C6825AD2A61573E00FC0678 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6825AC2A61573E00FC0678 /* LoginViewController.swift */; };
-		8C7D3FE52A6559320075D72E /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7D3FE42A6559310075D72E /* WebService.swift */; };
 		8C7D3FE72A655A370075D72E /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7D3FE62A655A370075D72E /* RegisterModel.swift */; };
-		8C7D3FE92A655CAA0075D72E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7D3FE82A655CAA0075D72E /* APIManager.swift */; };
 		8C7D3FEC2A6730F00075D72E /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7D3FEB2A6730F00075D72E /* LoginModel.swift */; };
 		8C7D3FEE2A6731570075D72E /* RegisterViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7D3FED2A6731570075D72E /* RegisterViewModal.swift */; };
 		8C8BA4FE2A5F51DB003C9F5A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BA4FD2A5F51DB003C9F5A /* RegisterViewController.swift */; };
 		8C9045D62A64532D0084F594 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9045D52A64532D0084F594 /* ForgotPasswordViewController.swift */; };
+		8C9E8D602A99365300335508 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9E8D5F2A99365300335508 /* ChangePasswordViewModel.swift */; };
+		8C9E8D622A9936B500335508 /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9E8D612A9936B500335508 /* ChangePassword.swift */; };
+		8CB5F7592A7FBFF500E9659B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB5F7582A7FBFF500E9659B /* LoginViewModel.swift */; };
+		8CB5F75D2A805BA400E9659B /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB5F75C2A805BA400E9659B /* UserRequest.swift */; };
+		8CB5F75F2A805BBA00E9659B /* GetMyNotesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB5F75E2A805BBA00E9659B /* GetMyNotesRequest.swift */; };
+		8CB5F7612A805BD100E9659B /* GetNoteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB5F7602A805BD100E9659B /* GetNoteRequest.swift */; };
+		8CB5F7642A84FDF800E9659B /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB5F7632A84FDF800E9659B /* AddNoteViewController.swift */; };
+		8CB5F7682A86424000E9659B /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB5F7672A86424000E9659B /* CustomTableViewCell.swift */; };
+		8CB5F76D2A86A0CA00E9659B /* NoteTappedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB5F76C2A86A0CA00E9659B /* NoteTappedViewController.swift */; };
+		8CC6603A2A99F29D00CE1F8F /* UpdateMeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC660392A99F29D00CE1F8F /* UpdateMeRequest.swift */; };
+		8CC6603D2A99F31500CE1F8F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC6603C2A99F31500CE1F8F /* ProfileViewModel.swift */; };
 		8CD215742A605EB600839824 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CD2156B2A605EB600839824 /* Inter-Black.ttf */; };
 		8CD215752A605EB600839824 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CD2156C2A605EB600839824 /* Inter-ExtraLight.ttf */; };
 		8CD215762A605EB600839824 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CD2156D2A605EB600839824 /* Inter-Regular.ttf */; };
@@ -34,8 +67,22 @@
 		8CD2157A2A605EB600839824 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CD215712A605EB600839824 /* Inter-ExtraBold.ttf */; };
 		8CD2157B2A605EB600839824 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CD215722A605EB600839824 /* Inter-Medium.ttf */; };
 		8CD2157C2A605EB600839824 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CD215732A605EB600839824 /* Inter-Light.ttf */; };
+		8CE1669E2AB0FE960028EE88 /* AddNoteRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE1669D2AB0FE960028EE88 /* AddNoteRoute.swift */; };
+		8CE166A02AB0FE9E0028EE88 /* AddNoteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE1669F2AB0FE9E0028EE88 /* AddNoteRouter.swift */; };
+		8CE166A22AB100700028EE88 /* EditNoteRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE166A12AB100700028EE88 /* EditNoteRoute.swift */; };
+		8CE166A42AB1007B0028EE88 /* EditNoteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE166A32AB1007B0028EE88 /* EditNoteRouter.swift */; };
+		8CE797952A7CD3AE00418AFD /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE797942A7CD3AE00418AFD /* RequestMethod.swift */; };
+		8CE797972A7CD40000418AFD /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE797962A7CD40000418AFD /* RequestProtocol.swift */; };
+		8CE797992A7CD48B00418AFD /* RequestEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE797982A7CD48B00418AFD /* RequestEncoding.swift */; };
+		8CE7979B2A7CDAF900418AFD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE7979A2A7CDAF900418AFD /* NetworkManager.swift */; };
+		8CE7979D2A7CDB2D00418AFD /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE7979C2A7CDB2D00418AFD /* NetworkManagerProtocol.swift */; };
+		8CE7979F2A7D085700418AFD /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE7979E2A7D085700418AFD /* Auth.swift */; };
+		8CE797A12A7D087C00418AFD /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE797A02A7D087C00418AFD /* BaseResponse.swift */; };
+		8CE797A32A7D089700418AFD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE797A22A7D089700418AFD /* User.swift */; };
+		8CE797A52A7D08A800418AFD /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE797A42A7D08A800418AFD /* Notes.swift */; };
+		8CE797A72A7D0BE400418AFD /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE797A62A7D0BE400418AFD /* RegisterRequest.swift */; };
+		8CE797A92A7D0BFD00418AFD /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE797A82A7D0BFD00418AFD /* LoginRequest.swift */; };
 		8CFEA6172A6FFB7000851385 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFEA6162A6FFB7000851385 /* ProfileViewController.swift */; };
-		8CFEA61B2A7329D300851385 /* PasswordResetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFEA61A2A7329D300851385 /* PasswordResetModel.swift */; };
 		8CFEA6242A76DB2E00851385 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFEA6232A76DB2E00851385 /* CustomButton.swift */; };
 		8CFEA6262A76DB7100851385 /* NAContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFEA6252A76DB7100851385 /* NAContainerView.swift */; };
 		8CFEA6282A76E1D600851385 /* CustomTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFEA6272A76E1D600851385 /* CustomTextfield.swift */; };
@@ -45,25 +92,58 @@
 /* Begin PBXFileReference section */
 		17E1A957C5B7984946259060 /* Pods-basicNoteApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-basicNoteApp.release.xcconfig"; path = "Target Support Files/Pods-basicNoteApp/Pods-basicNoteApp.release.xcconfig"; sourceTree = "<group>"; };
 		4AA37B18C70C824DEF254C71 /* Pods_basicNoteApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_basicNoteApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C2A6CDE2A6DD96000E5DBAB /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		8C21B1DA2AA4B17900434533 /* ProfileRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRoute.swift; sourceTree = "<group>"; };
+		8C21B1DC2AA4B18100434533 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		8C21B1DE2AA4B30E00434533 /* ChangePasswordRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRoute.swift; sourceTree = "<group>"; };
+		8C21B1E02AA4B32000434533 /* ChangePasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRouter.swift; sourceTree = "<group>"; };
+		8C2721192AA25A1800D34B7B /* RegisterRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRoute.swift; sourceTree = "<group>"; };
+		8C27211B2AA25A2300D34B7B /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		8C27211D2AA25A5200D34B7B /* ForgotPasswordRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRoute.swift; sourceTree = "<group>"; };
+		8C27211F2AA25A5A00D34B7B /* ForgotPasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRouter.swift; sourceTree = "<group>"; };
+		8C2721212AA25A8500D34B7B /* NotesRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesRoute.swift; sourceTree = "<group>"; };
+		8C2721242AA25A9900D34B7B /* NotesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesRouter.swift; sourceTree = "<group>"; };
+		8C372F6E2A93919E00A03B1A /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		8C4BDE7A2A6973DF009B8B63 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		8C4BDE7F2A6DAB45009B8B63 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
+		8C5A1FAF2A8AC87E00BC45E9 /* DeleteNoteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNoteRequest.swift; sourceTree = "<group>"; };
+		8C5A1FB12A8AD9E000BC45E9 /* EditNoteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteRequest.swift; sourceTree = "<group>"; };
+		8C5A996C2A9F87CD0004A812 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		8C5A996E2A9F87E60004A812 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		8C5A99702A9F87FD0004A812 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		8C5A99732A9F882A0004A812 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		8C5A99752A9F88480004A812 /* PlaceOnWindowTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceOnWindowTransition.swift; sourceTree = "<group>"; };
+		8C5A99772A9F88620004A812 /* PushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
+		8C5A99792A9F88830004A812 /* ModalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransition.swift; sourceTree = "<group>"; };
+		8C5A997B2A9F89F30004A812 /* LoginRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRoute.swift; sourceTree = "<group>"; };
+		8C5A997D2A9F89FD0004A812 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		8C5FD1992A5F50FA005483C2 /* basicNoteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = basicNoteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C5FD19C2A5F50FA005483C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C5FD19E2A5F50FA005483C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8C5FD1A02A5F50FA005483C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8C5FD1A32A5F50FA005483C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C5FD1A52A5F50FB005483C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C5FD1A82A5F50FB005483C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C5FD1AA2A5F50FB005483C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C5FE46B2A8CCBCB00332D65 /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
+		8C5FE4732A8D87B900332D65 /* EditNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewModel.swift; sourceTree = "<group>"; };
+		8C5FE4752A922CEA00332D65 /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
+		8C5FE4772A922D4800332D65 /* AddNoteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteRequest.swift; sourceTree = "<group>"; };
 		8C6825AC2A61573E00FC0678 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		8C7D3FE42A6559310075D72E /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		8C7D3FE62A655A370075D72E /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
-		8C7D3FE82A655CAA0075D72E /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		8C7D3FEB2A6730F00075D72E /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		8C7D3FED2A6731570075D72E /* RegisterViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModal.swift; sourceTree = "<group>"; };
 		8C8BA4FD2A5F51DB003C9F5A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8C9045D52A64532D0084F594 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		8C9E8D5F2A99365300335508 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		8C9E8D612A9936B500335508 /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
+		8CB5F7582A7FBFF500E9659B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		8CB5F75C2A805BA400E9659B /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
+		8CB5F75E2A805BBA00E9659B /* GetMyNotesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMyNotesRequest.swift; sourceTree = "<group>"; };
+		8CB5F7602A805BD100E9659B /* GetNoteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNoteRequest.swift; sourceTree = "<group>"; };
+		8CB5F7632A84FDF800E9659B /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		8CB5F7672A86424000E9659B /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		8CB5F76C2A86A0CA00E9659B /* NoteTappedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTappedViewController.swift; sourceTree = "<group>"; };
+		8CC660392A99F29D00CE1F8F /* UpdateMeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMeRequest.swift; sourceTree = "<group>"; };
+		8CC6603C2A99F31500CE1F8F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		8CD2156B2A605EB600839824 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
 		8CD2156C2A605EB600839824 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
 		8CD2156D2A605EB600839824 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
@@ -73,8 +153,22 @@
 		8CD215712A605EB600839824 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
 		8CD215722A605EB600839824 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
 		8CD215732A605EB600839824 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
+		8CE1669D2AB0FE960028EE88 /* AddNoteRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteRoute.swift; sourceTree = "<group>"; };
+		8CE1669F2AB0FE9E0028EE88 /* AddNoteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteRouter.swift; sourceTree = "<group>"; };
+		8CE166A12AB100700028EE88 /* EditNoteRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteRoute.swift; sourceTree = "<group>"; };
+		8CE166A32AB1007B0028EE88 /* EditNoteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteRouter.swift; sourceTree = "<group>"; };
+		8CE797942A7CD3AE00418AFD /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		8CE797962A7CD40000418AFD /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		8CE797982A7CD48B00418AFD /* RequestEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEncoding.swift; sourceTree = "<group>"; };
+		8CE7979A2A7CDAF900418AFD /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8CE7979C2A7CDB2D00418AFD /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
+		8CE7979E2A7D085700418AFD /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		8CE797A02A7D087C00418AFD /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		8CE797A22A7D089700418AFD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8CE797A42A7D08A800418AFD /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		8CE797A62A7D0BE400418AFD /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		8CE797A82A7D0BFD00418AFD /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		8CFEA6162A6FFB7000851385 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		8CFEA61A2A7329D300851385 /* PasswordResetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetModel.swift; sourceTree = "<group>"; };
 		8CFEA6232A76DB2E00851385 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		8CFEA6252A76DB7100851385 /* NAContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NAContainerView.swift; sourceTree = "<group>"; };
 		8CFEA6272A76E1D600851385 /* CustomTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextfield.swift; sourceTree = "<group>"; };
@@ -111,6 +205,39 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8C372F6D2A93918F00A03B1A /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				8C372F6E2A93919E00A03B1A /* ChangePasswordViewController.swift */,
+				8C9E8D5F2A99365300335508 /* ChangePasswordViewModel.swift */,
+				8C21B1DE2AA4B30E00434533 /* ChangePasswordRoute.swift */,
+				8C21B1E02AA4B32000434533 /* ChangePasswordRouter.swift */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		8C5A996B2A9F87B60004A812 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8C5A996C2A9F87CD0004A812 /* AppRouter.swift */,
+				8C5A996E2A9F87E60004A812 /* Router.swift */,
+				8C5A99702A9F87FD0004A812 /* Animator.swift */,
+				8C5A99722A9F88190004A812 /* Transition */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		8C5A99722A9F88190004A812 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				8C5A99732A9F882A0004A812 /* Transition.swift */,
+				8C5A99752A9F88480004A812 /* PlaceOnWindowTransition.swift */,
+				8C5A99772A9F88620004A812 /* PushTransition.swift */,
+				8C5A99792A9F88830004A812 /* ModalTransition.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
 		8C5FD1902A5F50F9005483C2 = {
 			isa = PBXGroup;
 			children = (
@@ -132,11 +259,11 @@
 		8C5FD19B2A5F50FA005483C2 /* basicNoteApp */ = {
 			isa = PBXGroup;
 			children = (
+				8C5A996B2A9F87B60004A812 /* Router */,
+				8CE7978E2A7CD1B100418AFD /* Data Provider */,
+				8CE797882A7CD08E00418AFD /* Scenes */,
 				8CFEA61C2A744D5800851385 /* Components */,
-				8CFEA6182A7329A200851385 /* Auth */,
-				8CD2156A2A605E8600839824 /* Fonts */,
 				8C8BA4F92A5F5194003C9F5A /* Core */,
-				8C8BA4F82A5F5187003C9F5A /* Features */,
 				8C5FD1A22A5F50FA005483C2 /* Main.storyboard */,
 				8C5FD1A52A5F50FB005483C2 /* Assets.xcassets */,
 				8C5FD1A72A5F50FB005483C2 /* LaunchScreen.storyboard */,
@@ -145,24 +272,15 @@
 			path = basicNoteApp;
 			sourceTree = "<group>";
 		};
-		8C6825AB2A6154F700FC0678 /* Service */ = {
+		8C5FE46D2A8CCC1B00332D65 /* EditNote */ = {
 			isa = PBXGroup;
 			children = (
-				8C7D3FE42A6559310075D72E /* WebService.swift */,
-				8C7D3FE82A655CAA0075D72E /* APIManager.swift */,
+				8C5FE46B2A8CCBCB00332D65 /* EditNoteViewController.swift */,
+				8C5FE4732A8D87B900332D65 /* EditNoteViewModel.swift */,
+				8CE166A12AB100700028EE88 /* EditNoteRoute.swift */,
+				8CE166A32AB1007B0028EE88 /* EditNoteRouter.swift */,
 			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		8C8BA4F82A5F5187003C9F5A /* Features */ = {
-			isa = PBXGroup;
-			children = (
-				8C6825AB2A6154F700FC0678 /* Service */,
-				8C8BA4FC2A5F51BF003C9F5A /* View */,
-				8C8BA4FB2A5F51B8003C9F5A /* ViewModel */,
-				8C8BA4FA2A5F51B0003C9F5A /* Model */,
-			);
-			path = Features;
+			path = EditNote;
 			sourceTree = "<group>";
 		};
 		8C8BA4F92A5F5194003C9F5A /* Core */ = {
@@ -170,40 +288,60 @@
 			children = (
 				8C5FD19C2A5F50FA005483C2 /* AppDelegate.swift */,
 				8C5FD19E2A5F50FA005483C2 /* SceneDelegate.swift */,
-				8C5FD1A02A5F50FA005483C2 /* ViewController.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
-		8C8BA4FA2A5F51B0003C9F5A /* Model */ = {
+		8CB5F75A2A800A3F00E9659B /* User */ = {
 			isa = PBXGroup;
 			children = (
-				8C7D3FE62A655A370075D72E /* RegisterModel.swift */,
-				8C7D3FEB2A6730F00075D72E /* LoginModel.swift */,
+				8CB5F75C2A805BA400E9659B /* UserRequest.swift */,
+				8C9E8D612A9936B500335508 /* ChangePassword.swift */,
+				8CC660392A99F29D00CE1F8F /* UpdateMeRequest.swift */,
 			);
-			path = Model;
+			path = User;
 			sourceTree = "<group>";
 		};
-		8C8BA4FB2A5F51B8003C9F5A /* ViewModel */ = {
+		8CB5F75B2A800A4600E9659B /* Note */ = {
 			isa = PBXGroup;
 			children = (
-				8C7D3FED2A6731570075D72E /* RegisterViewModal.swift */,
-				8C4BDE7F2A6DAB45009B8B63 /* NotesViewModel.swift */,
+				8CB5F7602A805BD100E9659B /* GetNoteRequest.swift */,
+				8C5A1FAF2A8AC87E00BC45E9 /* DeleteNoteRequest.swift */,
+				8CB5F75E2A805BBA00E9659B /* GetMyNotesRequest.swift */,
+				8C5A1FB12A8AD9E000BC45E9 /* EditNoteRequest.swift */,
+				8C5FE4772A922D4800332D65 /* AddNoteRequest.swift */,
 			);
-			path = ViewModel;
+			path = Note;
 			sourceTree = "<group>";
 		};
-		8C8BA4FC2A5F51BF003C9F5A /* View */ = {
+		8CB5F7622A84FDC300E9659B /* Addnote */ = {
 			isa = PBXGroup;
 			children = (
-				8C8BA4FD2A5F51DB003C9F5A /* RegisterViewController.swift */,
-				8C6825AC2A61573E00FC0678 /* LoginViewController.swift */,
-				8C9045D52A64532D0084F594 /* ForgotPasswordViewController.swift */,
-				8C4BDE7A2A6973DF009B8B63 /* NotesViewController.swift */,
-				8C2A6CDE2A6DD96000E5DBAB /* NoteCell.swift */,
+				8CB5F7632A84FDF800E9659B /* AddNoteViewController.swift */,
+				8C5FE4752A922CEA00332D65 /* AddNoteViewModel.swift */,
+				8CE1669D2AB0FE960028EE88 /* AddNoteRoute.swift */,
+				8CE1669F2AB0FE9E0028EE88 /* AddNoteRouter.swift */,
+			);
+			path = Addnote;
+			sourceTree = "<group>";
+		};
+		8CB5F7692A86A05D00E9659B /* NoteTappedScene */ = {
+			isa = PBXGroup;
+			children = (
+				8CB5F76C2A86A0CA00E9659B /* NoteTappedViewController.swift */,
+			);
+			path = NoteTappedScene;
+			sourceTree = "<group>";
+		};
+		8CC6603B2A99F30700CE1F8F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
 				8CFEA6162A6FFB7000851385 /* ProfileViewController.swift */,
+				8CC6603C2A99F31500CE1F8F /* ProfileViewModel.swift */,
+				8C21B1DA2AA4B17900434533 /* ProfileRoute.swift */,
+				8C21B1DC2AA4B18100434533 /* ProfileRouter.swift */,
 			);
-			path = View;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		8CD2156A2A605E8600839824 /* Fonts */ = {
@@ -222,25 +360,132 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		8CFEA6182A7329A200851385 /* Auth */ = {
+		8CE797882A7CD08E00418AFD /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				8CFEA6192A7329AB00851385 /* PasswordReset */,
+				8CB5F7622A84FDC300E9659B /* Addnote */,
+				8C5FE46D2A8CCC1B00332D65 /* EditNote */,
+				8CB5F7692A86A05D00E9659B /* NoteTappedScene */,
+				8CE7978D2A7CD11500418AFD /* Notes */,
+				8CE7978C2A7CD0FB00418AFD /* Profile */,
+				8CE7978B2A7CD0D900418AFD /* ResetPassword */,
+				8CE7978A2A7CD0BB00418AFD /* Login */,
+				8CE797892A7CD09900418AFD /* Register */,
 			);
-			path = Auth;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
-		8CFEA6192A7329AB00851385 /* PasswordReset */ = {
+		8CE797892A7CD09900418AFD /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				8CFEA61A2A7329D300851385 /* PasswordResetModel.swift */,
+				8C8BA4FD2A5F51DB003C9F5A /* RegisterViewController.swift */,
+				8C7D3FED2A6731570075D72E /* RegisterViewModal.swift */,
+				8C7D3FE62A655A370075D72E /* RegisterModel.swift */,
+				8C2721192AA25A1800D34B7B /* RegisterRoute.swift */,
+				8C27211B2AA25A2300D34B7B /* RegisterRouter.swift */,
 			);
-			path = PasswordReset;
+			path = Register;
+			sourceTree = "<group>";
+		};
+		8CE7978A2A7CD0BB00418AFD /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8C6825AC2A61573E00FC0678 /* LoginViewController.swift */,
+				8C7D3FEB2A6730F00075D72E /* LoginModel.swift */,
+				8CB5F7582A7FBFF500E9659B /* LoginViewModel.swift */,
+				8C5A997B2A9F89F30004A812 /* LoginRoute.swift */,
+				8C5A997D2A9F89FD0004A812 /* LoginRouter.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		8CE7978B2A7CD0D900418AFD /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				8C9045D52A64532D0084F594 /* ForgotPasswordViewController.swift */,
+				8C27211D2AA25A5200D34B7B /* ForgotPasswordRoute.swift */,
+				8C27211F2AA25A5A00D34B7B /* ForgotPasswordRouter.swift */,
+			);
+			path = ResetPassword;
+			sourceTree = "<group>";
+		};
+		8CE7978C2A7CD0FB00418AFD /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8CC6603B2A99F30700CE1F8F /* Profile */,
+				8C372F6D2A93918F00A03B1A /* ChangePassword */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		8CE7978D2A7CD11500418AFD /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				8C4BDE7A2A6973DF009B8B63 /* NotesViewController.swift */,
+				8C4BDE7F2A6DAB45009B8B63 /* NotesViewModel.swift */,
+				8CB5F7672A86424000E9659B /* CustomTableViewCell.swift */,
+				8C2721212AA25A8500D34B7B /* NotesRoute.swift */,
+				8C2721242AA25A9900D34B7B /* NotesRouter.swift */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+		8CE7978E2A7CD1B100418AFD /* Data Provider */ = {
+			isa = PBXGroup;
+			children = (
+				8CE797912A7CD1EF00418AFD /* Requests */,
+				8CE797902A7CD1E800418AFD /* Model */,
+				8CE7978F2A7CD1E300418AFD /* Core */,
+			);
+			path = "Data Provider";
+			sourceTree = "<group>";
+		};
+		8CE7978F2A7CD1E300418AFD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8CE7979A2A7CDAF900418AFD /* NetworkManager.swift */,
+				8CE797962A7CD40000418AFD /* RequestProtocol.swift */,
+				8CE797942A7CD3AE00418AFD /* RequestMethod.swift */,
+				8CE797982A7CD48B00418AFD /* RequestEncoding.swift */,
+				8CE7979C2A7CDB2D00418AFD /* NetworkManagerProtocol.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8CE797902A7CD1E800418AFD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8CE7979E2A7D085700418AFD /* Auth.swift */,
+				8CE797A02A7D087C00418AFD /* BaseResponse.swift */,
+				8CE797A22A7D089700418AFD /* User.swift */,
+				8CE797A42A7D08A800418AFD /* Notes.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8CE797912A7CD1EF00418AFD /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				8CB5F75B2A800A4600E9659B /* Note */,
+				8CB5F75A2A800A3F00E9659B /* User */,
+				8CE797932A7CD2AA00418AFD /* Auth */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		8CE797932A7CD2AA00418AFD /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				8CE797A62A7D0BE400418AFD /* RegisterRequest.swift */,
+				8CE797A82A7D0BFD00418AFD /* LoginRequest.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		8CFEA61C2A744D5800851385 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8CD2156A2A605E8600839824 /* Fonts */,
 				8CFEA6232A76DB2E00851385 /* CustomButton.swift */,
 				8CFEA6252A76DB7100851385 /* NAContainerView.swift */,
 				8CFEA6272A76E1D600851385 /* CustomTextfield.swift */,
@@ -378,25 +623,72 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C21B1DB2AA4B17900434533 /* ProfileRoute.swift in Sources */,
+				8CE7979B2A7CDAF900418AFD /* NetworkManager.swift in Sources */,
 				8C8BA4FE2A5F51DB003C9F5A /* RegisterViewController.swift in Sources */,
+				8CC6603A2A99F29D00CE1F8F /* UpdateMeRequest.swift in Sources */,
+				8C2721252AA25A9900D34B7B /* NotesRouter.swift in Sources */,
 				8C7D3FEE2A6731570075D72E /* RegisterViewModal.swift in Sources */,
-				8C5FD1A12A5F50FA005483C2 /* ViewController.swift in Sources */,
+				8C5FE46C2A8CCBCB00332D65 /* EditNoteViewController.swift in Sources */,
+				8C2721202AA25A5A00D34B7B /* ForgotPasswordRouter.swift in Sources */,
+				8CE797A92A7D0BFD00418AFD /* LoginRequest.swift in Sources */,
+				8C27211A2AA25A1800D34B7B /* RegisterRoute.swift in Sources */,
+				8C9E8D602A99365300335508 /* ChangePasswordViewModel.swift in Sources */,
+				8CE797A72A7D0BE400418AFD /* RegisterRequest.swift in Sources */,
+				8C27211E2AA25A5200D34B7B /* ForgotPasswordRoute.swift in Sources */,
+				8C372F6F2A93919E00A03B1A /* ChangePasswordViewController.swift in Sources */,
+				8CE166A02AB0FE9E0028EE88 /* AddNoteRouter.swift in Sources */,
 				8C4BDE802A6DAB45009B8B63 /* NotesViewModel.swift in Sources */,
+				8CE797A32A7D089700418AFD /* User.swift in Sources */,
+				8CE7979F2A7D085700418AFD /* Auth.swift in Sources */,
+				8CB5F7592A7FBFF500E9659B /* LoginViewModel.swift in Sources */,
 				8CFEA6242A76DB2E00851385 /* CustomButton.swift in Sources */,
-				8C7D3FE52A6559320075D72E /* WebService.swift in Sources */,
-				8C2A6CDF2A6DD96000E5DBAB /* NoteCell.swift in Sources */,
-				8C7D3FE92A655CAA0075D72E /* APIManager.swift in Sources */,
+				8CE166A42AB1007B0028EE88 /* EditNoteRouter.swift in Sources */,
+				8CE166A22AB100700028EE88 /* EditNoteRoute.swift in Sources */,
+				8C21B1E12AA4B32000434533 /* ChangePasswordRouter.swift in Sources */,
+				8CE797972A7CD40000418AFD /* RequestProtocol.swift in Sources */,
+				8CB5F7612A805BD100E9659B /* GetNoteRequest.swift in Sources */,
+				8CE797952A7CD3AE00418AFD /* RequestMethod.swift in Sources */,
 				8CFEA6262A76DB7100851385 /* NAContainerView.swift in Sources */,
+				8C2721222AA25A8500D34B7B /* NotesRoute.swift in Sources */,
+				8C21B1DD2AA4B18100434533 /* ProfileRouter.swift in Sources */,
+				8C5A997A2A9F88830004A812 /* ModalTransition.swift in Sources */,
 				8C9045D62A64532D0084F594 /* ForgotPasswordViewController.swift in Sources */,
+				8CE1669E2AB0FE960028EE88 /* AddNoteRoute.swift in Sources */,
+				8CB5F76D2A86A0CA00E9659B /* NoteTappedViewController.swift in Sources */,
+				8C5A1FB22A8AD9E000BC45E9 /* EditNoteRequest.swift in Sources */,
+				8C9E8D622A9936B500335508 /* ChangePassword.swift in Sources */,
+				8C5A99742A9F882A0004A812 /* Transition.swift in Sources */,
+				8C5A996F2A9F87E60004A812 /* Router.swift in Sources */,
+				8C5FE4742A8D87B900332D65 /* EditNoteViewModel.swift in Sources */,
+				8CB5F75F2A805BBA00E9659B /* GetMyNotesRequest.swift in Sources */,
+				8C5FE4762A922CEA00332D65 /* AddNoteViewModel.swift in Sources */,
+				8CE797A52A7D08A800418AFD /* Notes.swift in Sources */,
 				8C7D3FEC2A6730F00075D72E /* LoginModel.swift in Sources */,
+				8C5A99762A9F88480004A812 /* PlaceOnWindowTransition.swift in Sources */,
 				8CFEA6282A76E1D600851385 /* CustomTextfield.swift in Sources */,
+				8C21B1DF2AA4B30E00434533 /* ChangePasswordRoute.swift in Sources */,
+				8CC6603D2A99F31500CE1F8F /* ProfileViewModel.swift in Sources */,
+				8CB5F7682A86424000E9659B /* CustomTableViewCell.swift in Sources */,
 				8C7D3FE72A655A370075D72E /* RegisterModel.swift in Sources */,
-				8CFEA61B2A7329D300851385 /* PasswordResetModel.swift in Sources */,
+				8C5A1FB02A8AC87E00BC45E9 /* DeleteNoteRequest.swift in Sources */,
 				8C4BDE7B2A6973DF009B8B63 /* NotesViewController.swift in Sources */,
+				8C5A99782A9F88620004A812 /* PushTransition.swift in Sources */,
+				8C5A997C2A9F89F30004A812 /* LoginRoute.swift in Sources */,
+				8CB5F75D2A805BA400E9659B /* UserRequest.swift in Sources */,
+				8C27211C2AA25A2300D34B7B /* RegisterRouter.swift in Sources */,
 				8C5FD19D2A5F50FA005483C2 /* AppDelegate.swift in Sources */,
+				8CE797992A7CD48B00418AFD /* RequestEncoding.swift in Sources */,
+				8CB5F7642A84FDF800E9659B /* AddNoteViewController.swift in Sources */,
 				8CFEA6172A6FFB7000851385 /* ProfileViewController.swift in Sources */,
 				8C6825AD2A61573E00FC0678 /* LoginViewController.swift in Sources */,
+				8CE7979D2A7CDB2D00418AFD /* NetworkManagerProtocol.swift in Sources */,
+				8C5A996D2A9F87CD0004A812 /* AppRouter.swift in Sources */,
+				8C5FE4782A922D4800332D65 /* AddNoteRequest.swift in Sources */,
 				8C5FD19F2A5F50FA005483C2 /* SceneDelegate.swift in Sources */,
+				8C5A99712A9F87FD0004A812 /* Animator.swift in Sources */,
+				8C5A997E2A9F89FD0004A812 /* LoginRouter.swift in Sources */,
+				8CE797A12A7D087C00418AFD /* BaseResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +849,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Kaan.basicNoteApp;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -585,6 +878,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Kaan.basicNoteApp;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

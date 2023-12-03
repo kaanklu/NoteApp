@@ -8,5 +8,9 @@ target 'basicNoteApp' do
   # Pods for basicNoteApp
   pod "TinyConstraints"
   pod 'Alamofire'
-
+  pod 'SwipeCellKit'
+  pod 'IQKeyboardManager'
+  pod 'SwiftEntryKit'
+  pod "ToastViewSwift"
+  
 end

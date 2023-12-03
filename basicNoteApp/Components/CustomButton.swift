@@ -9,11 +9,11 @@ class CustomButton: UIButton {
     }
     
 
-//    var leftImage: UIImage? {
-//        didSet {
-//            configureLeftImage()
-//        }
-//    }
+    var leftImage: UIImage? {
+        didSet {
+            configureLeftImage()
+        }
+    }
     
     var buttonFont : UIFont? {
         didSet {
@@ -51,6 +51,7 @@ extension CustomButton {
         self.layer.cornerRadius = 5
         self.backgroundColor = UIColor(named: "myPurple")
         self.titleLabel?.font = UIFont(name: "Inter-SemiBold", size: 16)
+        self.setTitleColor(UIColor(named: "deepPurple"), for: .normal)
     }
     
     private func configureButtonTitle() {
@@ -72,13 +73,13 @@ extension CustomButton {
         }
     }
     
-//    private func configureLeftImage() {
-//        if let image = self.leftImage {
-//            self.setImage(image, for: .normal)
-//            let edgeInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 8)
-//            imageEdgeInsets = edgeInsets
-//        }
-//    }
+    private func configureLeftImage() {
+        if let image = self.leftImage {
+            self.setImage(image, for: .normal)
+            let edgeInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 8)
+            imageEdgeInsets = edgeInsets
+        }
+    }
     
     private func setButtonTitle() {
         if let buttonTitle = self.buttonTitle {
